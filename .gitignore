@@ -1,0 +1,6 @@
+# Data pribadi anggota — JANGAN pernah di-commit ke remote.
+# Berisi nomor WhatsApp ~900 orang. Simpan lokal saja.
+out/
+*.csv
+*.xlsx
+__pycache__/
