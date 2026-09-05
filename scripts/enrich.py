@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Perkaya roster: nama dari perkenalan diri, kota/domisili, indikasi gender."""
-import json, re
+import json, re, sys
 from collections import Counter
 
-R = json.load(open('out/roster_raw.json'))
+SRC = sys.argv[1] if len(sys.argv) > 1 else 'out/roster_raw.json'
+DST = sys.argv[2] if len(sys.argv) > 2 else 'out/roster.json'
+R = json.load(open(SRC))
 
 # ---------------- wilayah ----------------
 MALANG = ["kota malang", "kabupaten malang", "kab malang", "kab. malang", "malang",
@@ -248,7 +250,7 @@ for r in R:
         'keaktifan': 'Aktif' if r['msgs'] >= 10 else ('Pernah bicara' if r['msgs'] else 'Silent'),
     })
 
-json.dump(out, open('out/roster.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump(out, open(DST, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 print('TOTAL kontak unik :', len(out))
 print('punya nomor WA    :', sum(1 for x in out if x['wa']))

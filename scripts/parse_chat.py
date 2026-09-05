@@ -4,6 +4,13 @@ import re, sys, json, unicodedata
 from collections import OrderedDict, defaultdict
 
 SRC = sys.argv[1]
+DST = sys.argv[2] if len(sys.argv) > 2 else 'out/roster_raw.json'
+
+
+def split_people(s):
+    """'Rama Aditya, +62 822-4285-2630, and Eko Konova' -> 3 nama."""
+    s = re.sub(r',?\s+and\s+', ', ', s.strip())
+    return [p.strip() for p in s.split(',') if p.strip()]
 
 TIME = r'\[\d{1,2}:\d{2}\s*[AP]M\]'
 RE_DATE   = re.compile(r'^##\s+(.+?)\s*$')
@@ -73,9 +80,14 @@ while i < len(lines):
         mm = RE_ADDED.match(body)
         if mm:
             touch(mm.group(1), cur_date, 'seen')
-            touch(mm.group(2), cur_date, 'added'); events['added'] += 1; i += 1; continue
+            for p in split_people(mm.group(2)):
+                touch(p, cur_date, 'added'); events['added'] += 1
+            i += 1; continue
         mm = RE_REMOVED.match(body)
-        if mm: touch(mm.group(2), cur_date, 'removed'); events['removed'] += 1; i += 1; continue
+        if mm:
+            for p in split_people(mm.group(2)):
+                touch(p, cur_date, 'removed'); events['removed'] += 1
+            i += 1; continue
         mm = RE_LEFT.match(body)
         if mm: touch(mm.group(1), cur_date, 'left'); events['left'] += 1; i += 1; continue
         events['other:' + body[:40]] += 1
@@ -100,4 +112,4 @@ while i < len(lines):
 
 print(json.dumps({'events': dict(events), 'members': len(members)}, indent=2, ensure_ascii=False)[:2500])
 json.dump([{k: v for k, v in r.items() if k != 'key'} for r in members.values()],
-          open('out/roster_raw.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+          open(DST, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
