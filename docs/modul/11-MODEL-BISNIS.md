@@ -107,16 +107,34 @@ Dengan pembagian di atas: **kas AI Club Malang ±Rp 55–60 juta**, cukup untuk 
 
 | Bulan | Program | Target |
 |---|---|---|
-| **1** | Kopdar gratis + **Explorer Cohort #1** + **Builder Cohort #1** *(paralel)* | 25 + 18 peserta |
-| 2 | Workshop 1 hari #1 + sesi online mingguan | 50 peserta |
-| 3 | Automation Clinic + AI Show & Tell | 30 peserta |
-| **4** | **Engineer Lab #1** + Workshop #2 | 10 + 50 |
-| 5 | Explorer Cohort #2 + pelatihan korporat pertama | 25 + 1 klien |
-| 6 | **Demo Day publik** + Workshop #3 | Terbuka umum |
-| **7** | **Private Lab** + **Maker Lab** *(bila kuorum)* | 10 + 8 |
-| 8–12 | Cohort berulang + project korporat + kolaborasi kampus | — |
+| **1** | Kopdar gratis + **Explorer Cohort #1** + **Builder Cohort #1** *(paralel)* + **Maker Lab proyek #1 dimulai** | 25 + 18 peserta + 1 mitra AIoT |
+| **2** | **Engineer Lab #1** + Workshop 1 hari #1 + sesi online mingguan | 12 + 50 peserta |
+| 3 | Automation Clinic + AI Show & Tell + Maker Lab proyek #2 | 30 peserta + 1 mitra |
+| **4** | **Private Lab #1** + Workshop #2 + Explorer Cohort #2 | 10 + 50 + 25 |
+| 5 | Builder Cohort #2 + pelatihan korporat pertama | 18 + 1 klien |
+| **6** | **Demo Day publik** — dengan demo AIoT yang benar-benar berjalan | Terbuka umum + media |
+| 7–12 | Cohort berulang + project korporat + kolaborasi kampus + jual ulang template AIoT | — |
 
-**Perubahan kunci dari draf awal: Builder Cohort dibuka bulan 1, bukan bulan 4.** 30% anggota datang untuk automation — mereka tidak akan menunggu tiga bulan, dan bila menunggu terlalu lama mereka akan belajar di tempat lain.
+**Tiga percepatan dari draf awal, semuanya karena hambatan sudah hilang:**
+
+| Program | Semula | Sekarang | Pemicu |
+|---|---|---|---|
+| Builder Cohort | Bulan 4 | **Bulan 1** | 30% anggota datang untuk automation |
+| Engineer Lab | Bulan 4 | **Bulan 2** | 🟢 Mentor sudah direkrut & berkemampuan mendalam |
+| Private Lab | Bulan 7 | **Bulan 4** | 🟢 Mentor siap + anggaran menyediakan sewa GPU per sesi |
+| Maker Lab | Bulan 7 | **Bulan 1** | 🟢 Kerja sama AIoT disetujui, dua mitra sudah ada |
+
+> **Demo Day bulan 6 adalah puncak yang sengaja dirancang.** Pada bulan itu komunitas sudah punya sistem penghitung lobster atau pemantau kebun yang benar-benar berjalan — bahan liputan media dan kartu masuk kampus yang jauh lebih kuat daripada presentasi mana pun.
+
+---
+
+## Anggaran Operasional 🟢
+
+Dana operasional **Rp 1.000.000 per bulan** sudah tersedia dan dialokasikan. Rinciannya di [12 Anggaran Bulanan](12-ANGGARAN-BULANAN.md).
+
+Titik impas: **dua workshop dalam setahun sudah menutup seluruh anggaran setahun** (Rp 12 juta). Dengan rencana 6 workshop + 4 cohort, anggaran ini kembali berkali-kali lipat.
+
+Perangkat AIoT **tidak dibebankan ke anggaran ini** — ditanggung mitra lewat skema pilot berbagi biaya di [13 Kemitraan AIoT](13-KEMITRAAN-AIOT.md).
 
 ---
 

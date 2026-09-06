@@ -346,9 +346,9 @@ function quote(s, txt, who, opt) {
   const tr = [
     { n: '1', t: 'AIC Explorer', d: 'Prompting, produktivitas, riset, konten', lv: 'Level 1–2', pr: 'Buka bulan 1', col: C.teal },
     { n: '2', t: 'AIC Builder', d: 'Automation, n8n, integrasi, workflow', lv: 'Level 3', pr: 'Buka bulan 1', col: C.teal },
-    { n: '3', t: 'AIC Engineer Lab', d: 'RAG, agent, API, MCP, deployment', lv: 'Level 3–5', pr: 'Buka bulan 4', col: C.sea },
-    { n: '4', t: 'AIC Private Lab', d: 'Ollama, Hugging Face, local AI', lv: 'Level 4', pr: 'Bulan 7 / permintaan', col: C.amber },
-    { n: '5', t: 'AIC Maker Lab', d: 'Sensor, kamera, ESP32, edge AI', lv: 'Level 5', pr: 'Bulan 7 / proyek', col: C.amber },
+    { n: '3', t: 'AIC Engineer Lab', d: 'RAG, agent, API, MCP, deployment', lv: 'Level 3–5', pr: 'Buka bulan 2', col: C.sea },
+    { n: '4', t: 'AIC Private Lab', d: 'Ollama, Hugging Face, local AI', lv: 'Level 4', pr: 'Buka bulan 4', col: C.amber },
+    { n: '5', t: 'AIC Maker Lab', d: 'Sensor, kamera, ESP32, edge AI', lv: 'Level 5', pr: 'Bulan 1 — proyek jalan', col: C.amber },
   ];
   const rh = 0.85, gap = 0.12, top = 1.78;
   tr.forEach((it, i) => {
@@ -363,7 +363,7 @@ function quote(s, txt, who, opt) {
   s.addText('TRACK', T('', { x: M + 0.85, y: 1.48, w: 3, h: 0.25, fontSize: 10, bold: true, color: C.muted, charSpacing: 1.5 }));
   s.addText('LEVEL PUSAT', T('', { x: M + 6.2, y: 1.48, w: 2, h: 0.25, fontSize: 10, bold: true, color: C.muted, charSpacing: 1.5 }));
   s.addText('PRIORITAS BUKA', T('', { x: M + 8.3, y: 1.48, w: 3, h: 0.25, fontSize: 10, bold: true, color: C.muted, charSpacing: 1.5 }));
-  foot(s, 'Perubahan kunci: Track 2 dibuka bersamaan Track 1 — 30% anggota datang untuk automation dan tidak akan menunggu.');
+  foot(s, 'Semula tiga track terakhir menunggu mentor, dana, dan peminat. Ketiganya kini sudah tersedia — mentor direkrut, anggaran Rp 1 jt/bulan siap, kerja sama AIoT disetujui.');
   s.addNotes('Ini peta utama. Semua slide berikutnya menjabarkan satu per satu.');
 }
 
@@ -582,7 +582,7 @@ sectionSlide('4 & 5', 'Private Lab & Maker Lab', 'Local AI, Hugging Face · AIoT
     { n: '5', t: 'Local RAG', d: 'Dokumen internal → jawaban yang tidak keluar jaringan.' },
     { n: '6', t: 'Ke lingkungan nyata', d: 'Server kantor, Docker, rangkaian hibrida.' },
   ], { y: 3.95, cols: 6, h: 2.0, gap: 0.16, tSize: 12.5, dSize: 10.5, num: C.amber });
-  foot(s, 'Format: lab 6 sesi berbasis permintaan — dibuka ketika sudah ada 8 pendaftar, biasanya setelah peserta menghadapi klien yang mempermasalahkan privasi data.');
+  foot(s, 'Format: lab 6 sesi, dibuka bulan 4. Mentor sudah siap dan anggaran menyediakan sewa GPU per sesi Lab Day — hambatan perangkat keras, penghalang terbesar track ini, sudah hilang.');
   s.addNotes('Sediakan 1 mesin lab bersama — hambatan terbesar track ini adalah perangkat keras.');
 }
 
@@ -612,7 +612,7 @@ sectionSlide('4 & 5', 'Private Lab & Maker Lab', 'Local AI, Hugging Face · AIoT
     { t: 'Pemantau kualitas udara', d: 'Kesehatan, kantor' },
     { t: 'Smart farming ternak', d: 'Peternakan Malang Raya' },
   ], { y: 4.4, cols: 6, h: 1.35, gap: 0.16, tSize: 12.5, dSize: 11, fill: C.paper });
-  foot(s, 'Format: lab berbasis proyek — satu angkatan mengerjakan satu kebutuhan nyata dari nol sampai terpasang. Kit lab bersama ±Rp 3–5 juta, dipakai banyak angkatan.');
+  foot(s, 'Kerja sama disetujui — Maker Lab jalan sejak bulan 1. Skema pilot berbagi biaya: perangkat ditanggung mitra, tenaga dan keahlian oleh komunitas.');
   s.addNotes('Track ini menghasilkan foto dan video paling menarik untuk media sosial komunitas.');
 }
 
@@ -1067,19 +1067,52 @@ function faseSlide(fase, judul, level, minggu) {
   foot(s, 'Skenario konservatif. Angka Lapis 3 berdasar penawaran nyata yang sudah masuk ke jaringan anggota Malang: Rp 40 juta dan Rp 60 juta untuk pembuatan software.');
 }
 
-/* 44 — Roadmap */
+/* 44 — Anggaran bulanan */
+{
+  const s = lightBase();
+  head(s, 'Anggaran Operasional Rp 1 Juta / Bulan', 'Sudah tersedia');
+  s.addText('Rp 1 juta bukan uang besar untuk sebuah organisasi — tapi sangat besar untuk komunitas belajar, karena hampir seluruhnya bisa diarahkan ke satu hal: menghapus alasan orang berhenti.',
+    T('', { x: M, y: 1.6, w: W - 2 * M, h: 0.5, fontSize: 15, color: C.muted }));
+  const pos = [
+    ['VPS n8n bersama', 'Rp 250 rb', 'Menghapus penyebab gugur terbesar di Minggu 10'],
+    ['Pool API key model AI', 'Rp 250 rb', 'Peserta praktik tanpa kartu kredit pribadi'],
+    ['Fonnte WhatsApp gateway', 'Rp 100 rb', 'Broadcast 723 anggota belum pindah + pengingat kelas'],
+    ['Iklan & boost konten', 'Rp 250 rb', 'Mengisi kelas berbayar, balik modal dari 2 tiket'],
+    ['Sewa GPU per sesi Lab', 'Rp 100 rb', 'Track 4 — jauh lebih murah dari GPU bulanan'],
+    ['Cadangan operasional', 'Rp 50 rb', 'Domain, tool kecil, tak terduga'],
+  ];
+  pos.forEach((p, i) => {
+    const y = 2.25 + i * 0.62;
+    s.addShape(pres.ShapeType.roundRect, { x: M, y, w: 8.6, h: 0.52, rectRadius: 0.05, fill: { color: C.paper } });
+    s.addText(p[0], T('', { x: M + 0.22, y, w: 3.0, h: 0.52, fontSize: 13, bold: true, fontFace: HF, color: C.ink, valign: 'middle' }));
+    s.addText(p[1], T('', { x: M + 3.3, y, w: 1.2, h: 0.52, fontSize: 13, bold: true, color: C.teal, valign: 'middle' }));
+    s.addText(p[2], T('', { x: M + 4.6, y, w: 3.75, h: 0.52, fontSize: 11, color: C.muted, valign: 'middle' }));
+  });
+  s.addShape(pres.ShapeType.roundRect, { x: 9.5, y: 2.25, w: 3.2, h: 1.7, rectRadius: 0.1, fill: { color: C.deep } });
+  s.addText('2 workshop', T('', { x: 9.75, y: 2.45, w: 2.7, h: 0.55, fontSize: 26, bold: true, fontFace: HF, color: C.mint }));
+  s.addText('setahun sudah menutup SELURUH anggaran setahun (Rp 12 jt).',
+    T('', { x: 9.75, y: 3.02, w: 2.7, h: 0.8, fontSize: 13, color: C.white, lineSpacingMultiple: 1.2 }));
+  s.addShape(pres.ShapeType.roundRect, { x: 9.5, y: 4.1, w: 3.2, h: 1.75, rectRadius: 0.1, fill: { color: C.paper } });
+  s.addText('Yang sengaja tidak dibeli', T('', { x: 9.75, y: 4.28, w: 2.7, h: 0.32, fontSize: 13, bold: true, fontFace: HF, color: C.amber }));
+  s.addText('Zoom Pro · GPU bulanan · langganan tool kreatif · website sendiri · n8n Cloud · kit AIoT',
+    T('', { x: 9.75, y: 4.62, w: 2.7, h: 1.1, fontSize: 12, color: C.muted, lineSpacingMultiple: 1.2 }));
+  s.addText('Urutan peningkatan saat kas terisi: kapasitas teknis dulu, baru jangkauan, baru orang. Menaikkan iklan sebelum kapasitas siap hanya mengundang orang ke kelas yang belum sanggup melayani mereka.',
+    T('', { x: M, y: 6.15, w: 8.6, h: 0.7, fontSize: 13, italic: true, color: C.teal, lineSpacingMultiple: 1.2 }));
+  s.addNotes('Perangkat AIoT tidak dibebankan ke anggaran ini — ditanggung mitra lewat skema pilot.');
+}
+
+/* 45 — Roadmap */
 {
   const s = lightBase();
   head(s, 'Urutan Buka Program — 12 Bulan', 'Roadmap');
   const rm = [
-    { b: 'Bulan 1', t: 'Explorer Cohort #1 + Builder Cohort #1 (paralel)', d: 'Target 25 + 18 peserta · kopdar gratis tetap jalan', c: C.teal, hi: true },
-    { b: 'Bulan 2', t: 'Workshop 1 hari #1 + sesi online mingguan', d: 'Target 50 peserta', c: C.sea },
-    { b: 'Bulan 3', t: 'Automation Clinic + AI Show & Tell', d: 'Target 30 peserta', c: C.sea },
-    { b: 'Bulan 4', t: 'Engineer Lab #1 + Workshop #2', d: 'Target 10 + 50 peserta', c: C.teal, hi: true },
-    { b: 'Bulan 5', t: 'Explorer Cohort #2 + pelatihan korporat pertama', d: 'Target 25 peserta + 1 klien', c: C.sea },
-    { b: 'Bulan 6', t: 'Demo Day publik + Workshop #3', d: 'Terbuka umum — undang kampus & media', c: C.sea },
-    { b: 'Bulan 7', t: 'Private Lab + Maker Lab (bila kuorum)', d: 'Target 10 + 8 peserta', c: C.amber, hi: true },
-    { b: 'Bulan 8–12', t: 'Cohort berulang + project korporat + kolaborasi kampus', d: 'Skala & keberlanjutan', c: C.sea },
+    { b: 'Bulan 1', t: 'Explorer #1 + Builder #1 (paralel) + Maker Lab proyek #1', d: '25 + 18 peserta · 1 mitra AIoT', c: C.teal, hi: true },
+    { b: 'Bulan 2', t: 'Engineer Lab #1 + Workshop 1 hari #1', d: '12 + 50 peserta', c: C.teal, hi: true },
+    { b: 'Bulan 3', t: 'Automation Clinic + AI Show & Tell + Maker Lab proyek #2', d: '30 peserta · 1 mitra', c: C.sea },
+    { b: 'Bulan 4', t: 'Private Lab #1 + Workshop #2 + Explorer #2', d: '10 + 50 + 25 peserta', c: C.amber, hi: true },
+    { b: 'Bulan 5', t: 'Builder Cohort #2 + pelatihan korporat pertama', d: '18 peserta + 1 klien', c: C.sea },
+    { b: 'Bulan 6', t: 'Demo Day publik — dengan demo AIoT yang benar-benar berjalan', d: 'Terbuka umum + undang media', c: C.teal, hi: true },
+    { b: 'Bulan 7–12', t: 'Cohort berulang + korporat + kampus + jual ulang template AIoT', d: 'Skala & keberlanjutan', c: C.sea },
   ];
   rm.forEach((it, i) => {
     const y = 1.55 + i * 0.63;
@@ -1088,11 +1121,50 @@ function faseSlide(fase, judul, level, minggu) {
     s.addText(it.t, T('', { x: M + 1.6, y, w: 6.4, h: 0.53, fontSize: 13.5, bold: true, fontFace: HF, color: it.hi ? C.white : C.ink, valign: 'middle' }));
     s.addText(it.d, T('', { x: M + 8.1, y, w: W - 2 * M - 8.3, h: 0.53, fontSize: 12, color: it.hi ? C.mutedLight : C.muted, valign: 'middle' }));
   });
-  s.addText('Perubahan kunci: Builder Cohort dibuka bulan 1, bukan bulan 4. 30% anggota datang untuk automation — bila menunggu terlalu lama, mereka akan belajar di tempat lain.',
+  s.addText('Demo Day bulan 6 adalah puncak yang sengaja dirancang: saat itu komunitas sudah punya sistem AIoT yang benar-benar berjalan — bahan liputan media dan kartu masuk kampus.',
     T('', { x: M, y: 6.7, w: W - 2 * M, h: 0.5, fontSize: 13.5, italic: true, color: C.teal }));
 }
 
-/* 45 — Konfirmasi pusat */
+/* 46 — Kemitraan AIoT */
+{
+  const s = lightBase();
+  head(s, 'Maker Lab Jalan Sejak Bulan 1', 'Kerja sama AIoT disetujui');
+  s.addText('Maker Lab semula dijadwalkan bulan ke-7 karena diasumsikan harus menunggu peminat. Asumsi itu gugur oleh dua kalimat yang ditulis anggota sendiri.',
+    T('', { x: M, y: 1.6, w: W - 2 * M, h: 0.45, fontSize: 15, color: C.muted }));
+  const pr = [
+    { t: '"AI IoT penghitung lobster laut"', s2: 'Perikanan · Malang selatan',
+      d: 'Kamera + Raspberry Pi/Jetson + deteksi objek. Perangkat Rp 2,5–4 jt.',
+      n: 'Jual ulang: tambak, pengepul, gudang — Rp 20–50 jt per pemasangan' },
+    { t: '"Manajemen hidroponik & kebun alpukat"', s2: 'Pertanian · agrowisata Batu',
+      d: 'ESP32 + sensor kelembaban/EC/pH + dashboard + rekomendasi AI. Perangkat Rp 1,5–2,5 jt.',
+      n: 'Jual ulang: greenhouse, agrowisata, peternakan — Rp 15–40 jt per pemasangan' },
+  ];
+  const cw2 = (W - 2 * M - 0.3) / 2;
+  pr.forEach((it, i) => {
+    const x = M + i * (cw2 + 0.3);
+    s.addShape(pres.ShapeType.roundRect, { x, y: 2.2, w: cw2, h: 2.5, rectRadius: 0.1, fill: { color: C.deep } });
+    s.addText(it.t, T('', { x: x + 0.28, y: 2.38, w: cw2 - 0.56, h: 0.62, fontSize: 17, bold: true, italic: true, fontFace: HF, color: C.mint }));
+    s.addText(it.s2, T('', { x: x + 0.28, y: 3.02, w: cw2 - 0.56, h: 0.3, fontSize: 12, color: C.sea }));
+    s.addText(it.d, T('', { x: x + 0.28, y: 3.38, w: cw2 - 0.56, h: 0.62, fontSize: 13, color: C.white, lineSpacingMultiple: 1.15 }));
+    s.addText(it.n, T('', { x: x + 0.28, y: 4.05, w: cw2 - 0.56, h: 0.55, fontSize: 12, color: C.mutedLight, lineSpacingMultiple: 1.15 }));
+  });
+  s.addText('Skema pilot berbagi biaya', T('', { x: M, y: 4.85, w: 5, h: 0.35, fontSize: 17, bold: true, fontFace: HF, color: C.ink }));
+  const sk = [
+    ['Mitra menanggung', 'Perangkat, lokasi, akses data', 'Sistem terpasang jadi miliknya + perawatan 3 bulan'],
+    ['AI Club menanggung', 'Tenaga, keahlian, mentor', 'Studi kasus, hak publikasi, template siap jual ulang'],
+    ['Peserta menanggung', 'Waktu & kerja', 'Portofolio nyata, sertifikat Maker, prioritas proyek'],
+  ];
+  sk.forEach((r, i) => {
+    const y = 5.3 + i * 0.56;
+    s.addShape(pres.ShapeType.roundRect, { x: M, y, w: W - 2 * M, h: 0.48, rectRadius: 0.05, fill: { color: C.paper } });
+    s.addText(r[0], T('', { x: M + 0.22, y, w: 2.3, h: 0.48, fontSize: 12.5, bold: true, color: C.teal, valign: 'middle' }));
+    s.addText(r[1], T('', { x: M + 2.6, w: 3.6, y, h: 0.48, fontSize: 12, color: C.ink, valign: 'middle' }));
+    s.addText('→  ' + r[2], T('', { x: M + 6.4, y, w: W - 2 * M - 6.6, h: 0.48, fontSize: 12, color: C.muted, valign: 'middle' }));
+  });
+  s.addNotes('Yang dibangun bukan dua proyek, tapi dua template beserta bukti keduanya bekerja. Bukti itulah yang dibeli klien berikutnya.');
+}
+
+/* 47 — Konfirmasi pusat */
 {
   const s = lightBase();
   head(s, 'Lima Hal yang Perlu Dikonfirmasi ke Pusat', 'Sebelum diumumkan');

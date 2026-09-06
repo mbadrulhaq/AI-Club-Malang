@@ -81,6 +81,8 @@ Modul lengkap Beginner → Advanced, dikalibrasi dengan data 1.067 anggota.
 | 09 | [Prompt Library](docs/modul/09-PROMPT-LIBRARY.md) | Peserta |
 | 10 | [Direktori Tools](docs/modul/10-DIREKTORI-TOOLS.md) | Peserta + mentor |
 | 11 | [Model Bisnis & Paket Harga](docs/modul/11-MODEL-BISNIS.md) | Ketua + Bendahara |
+| 12 | [Anggaran Operasional Bulanan](docs/modul/12-ANGGARAN-BULANAN.md) | Ketua + Bendahara |
+| 13 | [Kemitraan AIoT — Proyek Perdana](docs/modul/13-KEMITRAAN-AIOT.md) | Ketua + Mentor Maker Lab |
 
-**Presentasi:** `scripts/deck_modul.js` membangun deck 46 slide (`out/Modul_AI_Club_Malang.pptx`).
+**Presentasi:** `scripts/deck_modul.js` membangun deck 48 slide (`out/Modul_AI_Club_Malang.pptx`).
 Jalankan `node scripts/deck_modul.js` — butuh `npm install pptxgenjs`.

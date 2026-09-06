@@ -83,11 +83,20 @@ Dua anggota menulis kebutuhan yang sangat konkret: *"AI IoT penghitung lobster l
 |---|---|---|---|---|---|
 | 1 | AIC Prompting & Content Creation | **AIC Explorer** | Beginner–Intermediate | **Bulan 1** | Prompting, produktivitas, riset, konten, creative AI, AI assistant |
 | 2 | AIC Automation Workflow | **AIC Builder** | Intermediate | **Bulan 1** *(paralel)* | n8n, webhook, API, integrasi, AI dalam workflow |
-| 3 | AIC Agentic AI & Engineering | **AIC Engineer Lab** | Intermediate–Advanced | Bulan 4 | RAG, agent, tool use, MCP, API, deployment |
-| 4 | AIC Local AI & Hugging Face Lab | **AIC Private Lab** | Intermediate–Advanced | Bulan 7 *(sesuai permintaan)* | Ollama, LM Studio, Open WebUI, model open-source, local RAG |
-| 5 | AIC AIoT & Edge AI Lab | **AIC Maker Lab** | Advanced / Lab | Bulan 7 *(berbasis proyek)* | ESP32, Raspberry Pi, MQTT, computer vision, edge AI |
+| 3 | AIC Agentic AI & Engineering | **AIC Engineer Lab** | Intermediate–Advanced | **Bulan 2** | RAG, agent, tool use, MCP, API, deployment |
+| 4 | AIC Local AI & Hugging Face Lab | **AIC Private Lab** | Intermediate–Advanced | **Bulan 4** | Ollama, LM Studio, Open WebUI, model open-source, local RAG |
+| 5 | AIC AIoT & Edge AI Lab | **AIC Maker Lab** | Advanced / Lab | **Bulan 1** *(proyek kemitraan)* | ESP32, Raspberry Pi, MQTT, computer vision, edge AI |
 
-**Perubahan dari draf awal: Track 2 dibuka bersamaan dengan Track 1, bukan setelahnya.** Alasannya ada di Temuan 3 — 30% anggota datang untuk automation, dan mereka tidak akan menunggu 3 bulan.
+**Tiga perubahan dari draf awal, semuanya karena hambatan yang sudah hilang:**
+
+| Perubahan | Sebelumnya | Sekarang | Kenapa berubah |
+|---|---|---|---|
+| Track 2 dibuka bersamaan Track 1 | Bulan 4 | **Bulan 1** | 30% anggota datang untuk automation dan tidak akan menunggu |
+| Track 3 dimajukan | Bulan 4 | **Bulan 2** | 🟢 Mentor sudah direkrut dan berkemampuan mendalam — tidak ada lagi yang perlu ditunggu |
+| Track 4 dimajukan | Bulan 7, bila ada 8 pendaftar | **Bulan 4** | 🟢 Mentor siap + anggaran menyediakan sewa GPU per sesi |
+| Track 5 dimajukan drastis | Bulan 7, bila kuorum | **Bulan 1** | 🟢 Kerja sama AIoT disetujui — dua proyek nyata sudah punya pemilik |
+
+> Semula tiga track terakhir dijadwalkan menunggu ketersediaan mentor, dana, dan peminat. **Ketiganya sudah tersedia.** Yang tersisa hanya menjalankan.
 
 ---
 
@@ -123,6 +132,8 @@ Pusat memakai kerangka **Level 1→5**. Modul Malang harus bisa dibaca dalam bah
 | 09 | [Prompt Library Anggota](09-PROMPT-LIBRARY.md) | Peserta |
 | 10 | [Direktori Tools](10-DIREKTORI-TOOLS.md) | Peserta + mentor |
 | 11 | [Model Bisnis & Paket Harga](11-MODEL-BISNIS.md) | Ketua + Bendahara 🔴 |
+| 12 | [Anggaran Operasional Bulanan](12-ANGGARAN-BULANAN.md) | Ketua + Bendahara 🟢 |
+| 13 | [Kemitraan AIoT — Proyek Perdana](13-KEMITRAAN-AIOT.md) | Ketua + Mentor Maker Lab 🟢 |
 
 🔴 = butuh konfirmasi pusat sebelum diumumkan.
 
@@ -151,4 +162,5 @@ Pusat memakai kerangka **Level 1→5**. Modul Malang harus bisa dibaca dalam bah
 - **Mentor** → baca dokumen track Anda + [08 Panduan Fasilitator](08-PANDUAN-FASILITATOR.md).
 - **Fasilitator kelas mingguan** → buka [06 Kurikulum 16 Minggu](06-KURIKULUM-16-MINGGU.md), cari minggu yang berjalan, jalankan apa adanya.
 - **Peserta** → mulai dari [09 Prompt Library](09-PROMPT-LIBRARY.md) dan [10 Direktori Tools](10-DIREKTORI-TOOLS.md).
-- **Ketua & Bendahara** → [11 Model Bisnis](11-MODEL-BISNIS.md).
+- **Ketua & Bendahara** → [11 Model Bisnis](11-MODEL-BISNIS.md) dan [12 Anggaran Bulanan](12-ANGGARAN-BULANAN.md).
+- **Mentor Maker Lab** → [13 Kemitraan AIoT](13-KEMITRAAN-AIOT.md), mulai minggu ini.
