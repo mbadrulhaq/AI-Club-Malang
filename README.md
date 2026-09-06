@@ -60,3 +60,27 @@ Struktur kolom persisnya ada di [08-TRACKER-SPEC.md](docs/08-TRACKER-SPEC.md).
 - 🔴 Butuh konfirmasi pusat (Mas Eko) sebelum dijalankan
 - 🟡 Keputusan internal Malang, bisa jalan sekarang
 - 🟢 Sudah pasti / sudah dikonfirmasi
+
+---
+
+## Modul Pembelajaran
+
+Modul lengkap Beginner → Advanced, dikalibrasi dengan data 1.067 anggota.
+
+| # | Dokumen | Untuk siapa |
+|---|---------|-------------|
+| 00 | [Index & Kalibrasi Data](docs/modul/00-INDEX.md) | Pengurus + mentor |
+| 01 | [Track 1 — AIC Explorer](docs/modul/01-TRACK-EXPLORER.md) | Mentor Track 1 |
+| 02 | [Track 2 — AIC Builder](docs/modul/02-TRACK-BUILDER.md) | Mentor Track 2 |
+| 03 | [Track 3 — AIC Engineer Lab](docs/modul/03-TRACK-ENGINEER.md) | Mentor Track 3 |
+| 04 | [Track 4 — AIC Private Lab](docs/modul/04-TRACK-LOCAL-AI.md) | Mentor Track 4 |
+| 05 | [Track 5 — AIC Maker Lab](docs/modul/05-TRACK-AIOT.md) | Mentor Track 5 |
+| 06 | [Kurikulum 16 Minggu](docs/modul/06-KURIKULUM-16-MINGGU.md) | **Fasilitator, tiap minggu** |
+| 07 | [Capstone & Penilaian](docs/modul/07-CAPSTONE-PENILAIAN.md) | Koord. Kurikulum |
+| 08 | [Panduan Fasilitator](docs/modul/08-PANDUAN-FASILITATOR.md) | Semua mentor |
+| 09 | [Prompt Library](docs/modul/09-PROMPT-LIBRARY.md) | Peserta |
+| 10 | [Direktori Tools](docs/modul/10-DIREKTORI-TOOLS.md) | Peserta + mentor |
+| 11 | [Model Bisnis & Paket Harga](docs/modul/11-MODEL-BISNIS.md) | Ketua + Bendahara |
+
+**Presentasi:** `scripts/deck_modul.js` membangun deck 46 slide (`out/Modul_AI_Club_Malang.pptx`).
+Jalankan `node scripts/deck_modul.js` — butuh `npm install pptxgenjs`.
