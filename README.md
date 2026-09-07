@@ -84,5 +84,18 @@ Modul lengkap Beginner → Advanced, dikalibrasi dengan data 1.067 anggota.
 | 12 | [Anggaran Operasional Bulanan](docs/modul/12-ANGGARAN-BULANAN.md) | Ketua + Bendahara |
 | 13 | [Kemitraan AIoT — Proyek Perdana](docs/modul/13-KEMITRAAN-AIOT.md) | Ketua + Mentor Maker Lab |
 
+---
+
+## Tutorial Teknis
+
+Empat tutorial praktik langkah-demi-langkah untuk pemula — lihat [indeksnya](docs/tutorial/00-INDEX.md).
+
+| # | Tutorial | Level | Durasi | Hasil akhir |
+|---|---|---|---|---|
+| 01 | [Automasi Report](docs/tutorial/01-AUTOMASI-REPORT.md) | Pemula | 2–3 jam | Laporan harian terkirim otomatis ke WhatsApp |
+| 02 | [Generating Gambar](docs/tutorial/02-GENERATING-GAMBAR.md) | Pemula | 2 jam | 10 aset visual + resep prompt sendiri |
+| 03 | [Automasi Ads](docs/tutorial/03-AUTOMASI-ADS.md) | Pemula–Menengah | 3 jam | 15 varian copy + laporan performa harian |
+| 04 | [Automasi Posting](docs/tutorial/04-AUTOMASI-POSTING.md) | Menengah | 3–4 jam | Kalender konten yang posting sendiri |
+
 **Presentasi:** `scripts/deck_modul.js` membangun deck 48 slide (`out/Modul_AI_Club_Malang.pptx`).
 Jalankan `node scripts/deck_modul.js` — butuh `npm install pptxgenjs`.

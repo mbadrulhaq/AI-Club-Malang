@@ -135,6 +135,17 @@ Pusat memakai kerangka **Level 1→5**. Modul Malang harus bisa dibaca dalam bah
 | 12 | [Anggaran Operasional Bulanan](12-ANGGARAN-BULANAN.md) | Ketua + Bendahara 🟢 |
 | 13 | [Kemitraan AIoT — Proyek Perdana](13-KEMITRAAN-AIOT.md) | Ketua + Mentor Maker Lab 🟢 |
 
+### Tutorial Teknis Pendamping
+
+Materi praktik langkah-demi-langkah yang dipakai langsung di kelas — lihat [indeks tutorial](../tutorial/00-INDEX.md).
+
+| Tutorial | Dipakai di | Level pusat |
+|---|---|---|
+| [01 Automasi Report](../tutorial/01-AUTOMASI-REPORT.md) | Track 2 · Minggu 9–11 | 3 |
+| [02 Generating Gambar](../tutorial/02-GENERATING-GAMBAR.md) | Track 1 · Minggu 7 | 1 |
+| [03 Automasi Ads](../tutorial/03-AUTOMASI-ADS.md) | Track 1 Minggu 6 + Track 2 Minggu 11 | 2–3 |
+| [04 Automasi Posting](../tutorial/04-AUTOMASI-POSTING.md) | Track 2 · Minggu 12 | 3 |
+
 🔴 = butuh konfirmasi pusat sebelum diumumkan.
 
 ---
