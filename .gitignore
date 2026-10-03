@@ -14,3 +14,4 @@ package.json
 .claude/skills/
 videos/*/snapshots/
 videos/*/renders/
+videos/*/.hyperframes/
