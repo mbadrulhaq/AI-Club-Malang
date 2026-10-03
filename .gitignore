@@ -7,3 +7,10 @@ __pycache__/
 node_modules/
 package-lock.json
 package.json
+
+# HyperFrames: skill terpasang & artefak render bisa dibuat ulang
+# (pulihkan skill dengan: npx skills add heygen-com/hyperframes)
+.agents/
+.claude/skills/
+videos/*/snapshots/
+videos/*/renders/
