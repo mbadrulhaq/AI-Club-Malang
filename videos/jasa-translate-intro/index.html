@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Jasa Translate — Product Intro 10s</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      /* OS-bundled fallbacks for non-Latin greetings (no font file to ship) */
+      @font-face {
+        font-family: "WenQuanYi Zen Hei";
+        src: local("WenQuanYi Zen Hei");
+      }
+      @font-face {
+        font-family: "DejaVu Sans";
+        src: local("DejaVu Sans");
+      }
+      :root {
+        --ink: #14093f;
+        --violet: #552cea;
+        --accent: #7e2bf2;
+        --sky: #2ea3f2;
+        --orange: #e05500;
+        --gold: #f5b800;
+        --paper: #f6f3ff;
+        --white: #ffffff;
+        --wa: #1faa59;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ink);
+        font-family: "Open Sans", "Noto Sans JP", "WenQuanYi Zen Hei", "DejaVu Sans", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .center {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 140px;
+      }
+
+      /* ---------- Scene 1 : greetings ---------- */
+      #s1 {
+        background: radial-gradient(circle at 50% 45%, #2b1580 0%, var(--ink) 62%);
+      }
+      #ring {
+        position: absolute;
+        left: 50%;
+        top: 46%;
+        width: 760px;
+        height: 760px;
+        margin: -380px 0 0 -380px;
+        border-radius: 50%;
+        border: 6px solid var(--sky);
+        opacity: 0;
+      }
+      #greet {
+        position: relative;
+        width: 1500px;
+        height: 460px;
+        display: grid;
+        place-items: center;
+      }
+      .g {
+        grid-area: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      .g .w {
+        font-size: 240px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--white);
+        letter-spacing: -0.02em;
+      }
+      .g .tag {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.32em;
+        color: var(--sky);
+        text-transform: uppercase;
+      }
+      #g-id .w {
+        color: var(--gold);
+      }
+      #g-id .tag {
+        color: var(--white);
+      }
+      #s1-sub {
+        margin-top: 70px;
+        font-size: 58px;
+        font-weight: 400;
+        color: #d8cffb;
+        letter-spacing: 0.01em;
+      }
+      #s1-sub b {
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      /* ---------- Scene 2 : numbers ---------- */
+      #s2 {
+        background: linear-gradient(135deg, var(--violet) 0%, var(--accent) 100%);
+      }
+      #s2 .cols {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 110px 140px;
+        gap: 90px;
+      }
+      .col-l {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .eyebrow {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        color: #cfc4ff;
+        text-transform: uppercase;
+      }
+      #n12 {
+        font-size: 440px;
+        font-weight: 700;
+        line-height: 0.95;
+        color: var(--gold);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.04em;
+      }
+      #n12-l {
+        font-size: 120px;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 36px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 900px;
+      }
+      .chip {
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--ink);
+        background: var(--white);
+        border-radius: 999px;
+        padding: 12px 34px;
+      }
+      .card {
+        width: 640px;
+        padding: 64px 56px;
+        border-radius: 32px;
+        background: rgba(20, 9, 63, 0.38);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      #n-klien {
+        font-size: 190px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--white);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.03em;
+      }
+      .card .lbl {
+        font-size: 42px;
+        font-weight: 400;
+        color: #e6defe;
+        line-height: 1.3;
+      }
+      .card .lbl b {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .card hr {
+        border: 0;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.25);
+        margin: 18px 0;
+      }
+      #n-tahun {
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--sky);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ---------- Scene 3 : lockup + CTA ---------- */
+      #s3 {
+        background: linear-gradient(180deg, var(--white) 0%, var(--paper) 100%);
+      }
+      #s3 .center {
+        gap: 0;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        margin-bottom: 40px;
+      }
+      .logo .name {
+        font-size: 112px;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .logo svg {
+        width: 92px;
+        height: 110px;
+      }
+      #hl {
+        font-size: 104px;
+        font-weight: 700;
+        line-height: 1.12;
+        color: var(--ink);
+        text-align: center;
+        letter-spacing: -0.02em;
+      }
+      #hl span {
+        color: var(--orange);
+      }
+      #sub3 {
+        margin-top: 26px;
+        font-size: 44px;
+        font-weight: 400;
+        color: #4b4470;
+        text-align: center;
+      }
+      #cta {
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      #wa {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        background: var(--wa);
+        color: var(--white);
+        font-size: 56px;
+        font-weight: 700;
+        padding: 22px 48px 22px 34px;
+        border-radius: 999px;
+      }
+      #wa svg {
+        width: 64px;
+        height: 64px;
+      }
+      #free {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--ink);
+        background: var(--gold);
+        padding: 18px 38px;
+        border-radius: 14px;
+        transform-origin: left center;
+      }
+      #url {
+        margin-top: 38px;
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--violet);
+        letter-spacing: 0.04em;
+      }
+      #url i {
+        font-style: normal;
+        color: #8a82ad;
+        font-weight: 400;
+      }
+
+      /* ---------- wipe ---------- */
+      #wipe {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        background: linear-gradient(100deg, var(--sky) 0%, var(--sky) 6%, var(--ink) 6%, var(--ink) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- SCENE 1 : hook — greetings in 8 languages -->
+      <section id="s1" class="clip" data-start="0" data-duration="3.3" data-track-index="0">
+        <div id="ring"></div>
+        <div class="center">
+          <div id="greet">
+            <div class="g" id="g-0"><div class="w">Hello</div><div class="tag">English</div></div>
+            <div class="g" id="g-1"><div class="w">你好</div><div class="tag">中文</div></div>
+            <div class="g" id="g-2"><div class="w">Bonjour</div><div class="tag">Français</div></div>
+            <div class="g" id="g-3"><div class="w">こんにちは</div><div class="tag">日本語</div></div>
+            <div class="g" id="g-4"><div class="w">Hola</div><div class="tag">Español</div></div>
+            <div class="g" id="g-5"><div class="w">مرحبا</div><div class="tag">العربية</div></div>
+            <div class="g" id="g-6"><div class="w">안녕하세요</div><div class="tag">한국어</div></div>
+            <div class="g" id="g-id"><div class="w">Halo</div><div class="tag">Indonesia</div></div>
+          </div>
+          <div id="s1-sub">Dunia bicara banyak bahasa. <b>Kami jembatannya.</b></div>
+        </div>
+      </section>
+
+      <!-- SCENE 2 : numbers -->
+      <section id="s2" class="clip" data-start="3" data-duration="3.7" data-track-index="1">
+        <div class="cols">
+          <div class="col-l">
+            <div class="eyebrow" id="s2-eye">Layanan Penerjemahan</div>
+            <div id="n12">0</div>
+            <div id="n12-l">Bahasa</div>
+            <div class="chips">
+              <div class="chip">Dokumen</div>
+              <div class="chip">Tersumpah</div>
+              <div class="chip">Interpreter</div>
+              <div class="chip">Subtitle</div>
+            </div>
+          </div>
+          <div class="card" id="card">
+            <div id="n-klien">0</div>
+            <div class="lbl">klien &amp; <b>brand</b> lokal dan internasional</div>
+            <hr />
+            <div class="lbl">Dipercaya sejak</div>
+            <div id="n-tahun">2000</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 3 : brand lockup + CTA -->
+      <section id="s3" class="clip" data-start="6.5" data-duration="3.5" data-track-index="2">
+        <div class="center">
+          <div class="logo" id="logo">
+            <svg viewBox="0 0 92 110" aria-hidden="true">
+              <polyline points="12,14 56,55 12,96" fill="none" stroke="#f5b800" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+              <polyline points="40,14 84,55 40,96" fill="none" stroke="#552cea" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="name">Jasa Translate</div>
+          </div>
+          <div id="hl">Penerjemah <span>Tersumpah</span><br />&amp; Profesional</div>
+          <div id="sub3">12 bahasa · Dokumen · Interpreter · Subtitle</div>
+          <div id="cta">
+            <div id="wa">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="32" r="30" fill="#ffffff" />
+                <path d="M32 14a17.5 17.5 0 0 0-15 26.5L14.5 50l9.8-2.5A17.5 17.5 0 1 0 32 14Zm9 24.2c-.4 1.1-2.2 2-3.1 2.1-.8.1-1.8.2-5.7-1.2-4.8-1.8-7.8-6.7-8-7-.2-.3-1.9-2.5-1.9-4.8 0-2.3 1.2-3.4 1.6-3.9.4-.4.9-.5 1.2-.5h.9c.3 0 .7-.1 1 .8.4.9 1.3 3.2 1.4 3.4.1.2.2.5 0 .8-.1.3-.2.5-.4.7l-.7.8c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.8 1.8 3.2 2 .4.2.6.2.9-.1.2-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.4 1.1 2.8 1.3.4.2.7.3.8.5.1.2.1 1.1-.3 2.1Z" fill="#1faa59" />
+              </svg>
+              <span>0813-3680-1661</span>
+            </div>
+            <div id="free">Gratis Konsultasi</div>
+          </div>
+          <div id="url">jasa-translate.com <i>· Jakarta · Malang · Seluruh Indonesia</i></div>
+        </div>
+      </section>
+
+      <div id="wipe"></div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const EASE_OUT = "power3.out";
+
+      /* ===== wipe panel (covers 2.7→3.05, reveals 3.05→3.5; again 6.3→6.65 / 6.65→7.1) ===== */
+      tl.set("#wipe", { xPercent: -101 }, 0);
+      tl.fromTo("#wipe", { xPercent: -101 }, { xPercent: 0, duration: 0.35, ease: "power3.inOut" }, 2.7);
+      tl.fromTo("#wipe", { xPercent: 0 }, { xPercent: 101, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 3.06);
+      tl.fromTo("#wipe", { xPercent: -101 }, { xPercent: 0, duration: 0.35, ease: "power3.inOut" }, 6.3);
+      tl.fromTo("#wipe", { xPercent: 0 }, { xPercent: 101, duration: 0.45, ease: "power3.inOut" }, 6.65);
+
+      /* ===== SCENE 1 : greeting cascade ===== */
+      const STEP = 0.24;
+      const T0 = 0.15;
+      for (let i = 0; i < 7; i++) {
+        const t = T0 + i * STEP;
+        tl.fromTo("#g-" + i, { autoAlpha: 0, scale: 1.2 }, { autoAlpha: 1, scale: 1, duration: 0.12, ease: EASE_OUT }, t);
+        tl.to("#g-" + i, { autoAlpha: 0, duration: 0.07, ease: "power1.in" }, t + 0.17);
+      }
+      // ring pulse on every beat (first fromTo owns the baseline; the rest don't re-apply from-values)
+      tl.fromTo("#ring", { scale: 0.7, autoAlpha: 0.45 }, { scale: 1.25, autoAlpha: 0, duration: 0.2, ease: "power2.out" }, T0);
+      for (let i = 1; i < 7; i++) {
+        tl.fromTo("#ring", { scale: 0.7, autoAlpha: 0.45 }, { scale: 1.25, autoAlpha: 0, duration: 0.2, ease: "power2.out", immediateRender: false, overwrite: "auto" }, T0 + i * STEP);
+      }
+      const tHalo = T0 + 7 * STEP; // 1.83
+      tl.fromTo("#g-id", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, tHalo);
+      tl.fromTo("#ring", { scale: 0.6, autoAlpha: 0.7 }, { scale: 1.9, autoAlpha: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, tHalo);
+      tl.fromTo("#s1-sub", { autoAlpha: 0, y: 36 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: EASE_OUT }, tHalo + 0.4);
+
+      /* ===== SCENE 2 : numbers ===== */
+      const n12 = { v: 0 };
+      const nKlien = { v: 0 };
+      const nTahun = { v: 2000 };
+      const fmtID = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      tl.fromTo("#s2-eye", { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: EASE_OUT }, 3.3);
+      tl.fromTo("#n12", { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: EASE_OUT }, 3.3);
+      tl.to(n12, { v: 12, duration: 0.8, ease: "power2.out", onUpdate: () => { document.getElementById("n12").textContent = Math.round(n12.v); } }, 3.3);
+      tl.fromTo("#n12-l", { autoAlpha: 0, x: -50 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: EASE_OUT }, 3.75);
+      tl.fromTo(".chip", { autoAlpha: 0, y: 34, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(1.8)", stagger: 0.11 }, 4.0);
+      tl.fromTo("#card", { autoAlpha: 0, x: 120 }, { autoAlpha: 1, x: 0, duration: 0.55, ease: EASE_OUT }, 3.45);
+      tl.to(nKlien, { v: 3827, duration: 1.2, ease: "power3.out", onUpdate: () => { document.getElementById("n-klien").textContent = fmtID(nKlien.v) + (nKlien.v >= 3826.5 ? "+" : ""); } }, 3.6);
+      tl.to(nTahun, { v: 2012, duration: 0.9, ease: "power2.out", onUpdate: () => { document.getElementById("n-tahun").textContent = Math.round(nTahun.v); } }, 4.1);
+
+      /* ===== SCENE 3 : lockup + CTA ===== */
+      tl.fromTo("#logo", { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: EASE_OUT }, 6.95);
+      tl.fromTo("#hl", { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: EASE_OUT }, 7.25);
+      tl.fromTo("#sub3", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: EASE_OUT }, 7.7);
+      tl.fromTo("#wa", { autoAlpha: 0, scale: 0.7 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 8.1);
+      tl.fromTo("#free", { autoAlpha: 0, x: -30 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: EASE_OUT }, 8.35);
+      tl.fromTo("#url", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, ease: "sine.out" }, 8.6);
+      tl.fromTo("#wa", { scale: 1 }, { scale: 1.05, duration: 0.45, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, 9.0);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
